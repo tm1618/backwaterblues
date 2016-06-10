@@ -1,0 +1,90 @@
+html {
+    overflow-y: scroll;
+}
+
+.table {
+    width: 60%;
+
+}
+
+body {
+    margin-bottom: 50px;
+}
+
+.scheduletable tbody tr:nth-child(odd) {
+    background-color: #E2E4FF;
+    }
+
+.scheduletable {
+    width: 100%
+}
+
+.scheduletable td {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.schedulecontainer {
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px black;
+    padding: 20px;
+}
+
+.taskcontainer {
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px black;
+    padding: 20px;
+    width: 500px;
+}
+
+.volunteercontainer {
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px black;
+    padding: 20px;
+}
+
+.volunteertablediv {
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px black;
+    padding: 20px;
+}
+
+#tasktable {
+    width: 100%;
+}
+
+#tasktable td {
+
+
+}
+
+
+
+#volunteertable {
+    border: 1px solid black;
+}
+
+
+.persontasktable {
+    border: 1px solid black;
+}
+
+.persontasktable td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+@media all and (max-width: 650px) {
+    .hi {
+       display: none;
+    }
+
+    .taskcontainer {
+        width: 360px;
+    }
+
+}

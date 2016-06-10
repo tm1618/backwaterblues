@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% crispy DayForm %}
+
+{% block content %}
+
+{% for day in days %}
+
+<p>{{ day }}</p>
+
+{% endfor %}
+
+<form action="/days/add/" method="post">{% csrf_token %}
+
+{{ form|crispy }}
+
+<br />
+<input type="submit" name="Submit", value="Submit">
+
+</form>
+
+{% endblock %}

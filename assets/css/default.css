@@ -1,0 +1,41 @@
+.table {
+    width: 60%;
+
+}
+
+.scheduletable {
+    width: 100%
+}
+
+.scheduletable td {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.schedulecontainer {
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px black;
+    padding: 20px;
+
+}
+
+#tasktable {
+    width: 100%;
+}
+
+#tasktable td {
+
+
+}
+
+
+.persontasktable {
+    width: 75%;
+    border: 1px solid black;
+}
+
+.persontasktable td {
+    border: 1px solid black;
+    padding: 10px;
+}

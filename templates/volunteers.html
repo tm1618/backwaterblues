@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if messages %}
+    {% for message in messages %}
+        <h4> {{ message }} </h4>
+    {% endfor %}
+{% endif %}
+
+<div class="volunteertablediv">
+
+<table id="volunteertable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th class="hi">Email</th>
+            <th>Phone</th>
+            {% if user.is_superuser %}
+                <th>Hours Assigned</th>
+            {% endif %}
+        </tr>
+    </thead>
+    <tbody>
+    {% for v in volunteer %}
+        <tr>
+            <td> <a href="/volunteers/edit/{{ v.id }}">{{ v.name }}</a></td>
+            <td class="hi"> {{ v.email }}</td>
+            <td> {{ v.phone }}</td>
+            {% if user.is_superuser %}
+                <td> {{ v.total_hours }}</td>
+            {% endif %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+</div>
+{% endblock %}

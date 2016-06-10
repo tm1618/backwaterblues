@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% crispy VolunteerForm %}
+
+{% block content %}
+
+<form action="/volunteers/add/" method="post">{% csrf_token %}
+
+{{ form|crispy }}
+
+<br />
+<input type="submit" name="Submit", value="Submit">
+
+</form>
+
+{% endblock %}

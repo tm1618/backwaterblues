@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if messages %}
+    {% for message in messages %}
+        <h4> {{ message }} </h4>
+    {% endfor %}
+{% endif %}
+
+<div class="schedulecontainer">
+
+<table id="tasktable" class="table">
+    <thead>
+        <tr>
+            <th>Task</th>
+            <th>Name</th>
+            <th>Day</th>
+            <th>Times</th>
+            <th>Hours</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for task in tasks %}
+    <tr>
+        <td> <a href="/tasks/edit/{{ task.id }}">{{ task.name }}</a></td>
+        <td>{% for volunteer in task.volunteers.all %} {{ volunteer }} <br />{% endfor %} </td>
+        <td> {{ task.day }}</td>
+        <td> {{ task.time }}</td>
+        <td> {{ task.hours }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
+
+</div>
+{% endblock %}

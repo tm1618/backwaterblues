@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% crispy VolunteerForm %}
+
+{% block content %}
+
+<div class="volunteercontainer">
+
+<a class="btn btn-primary" href="/volunteers/">Back to Volunteers</a>
+{% if user.is_superuser %}
+<form action="/volunteers/edit/{{ vol.id }}/" method="post">{% csrf_token %}
+
+{{ form|crispy }}
+
+<br />
+<input class="btn btn-primary" type="submit" name="Submit", value="Submit">
+    {% if user.is_superuser %}
+<a href="/volunteers/delete/{{ vol.id }}/" class="btn btn-primary">Delete Volunteer</a>
+    {% endif %}
+
+</form>
+
+{% else %}
+
+<h1>{{ vol.name }}</h1>
+<table class="table">
+    <tr>
+        <td><strong>Email: </strong> </td>
+        <td>{{ vol.email }}</td>
+    </tr>
+    <tr>
+        <td><strong>Phone:: </strong> </td>
+        <td>{{ vol.phone }}</td>
+    </tr>
+</table>
+
+{% endif %}
+<br /><br />
+
+<h1>Assignments</h1>
+<hr>
+<table class="persontasktable">
+    <thead>
+        <th>Task</th>
+        <th>Day</th>
+        <th>Time</th>
+        {% if user.is_superuser %}
+            <th>Hours</th>
+        {% endif %}
+    </thead>
+{% for i in tasks %}
+    <tbody>
+        <td> {{ i.name }}</td>
+        <td> {{ i.day }}</td>
+        <td> {{ i.time }}</td>
+        {% if user.is_superuser %}
+            <td> {{ i.hours }}</td>
+        {% endif %}
+
+    </tbody>
+{% endfor %}
+
+</table>
+
+    </div>
+
+
+{% endblock %}

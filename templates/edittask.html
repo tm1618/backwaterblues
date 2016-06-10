@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% crispy TaskForm %}
+
+{% block content %}
+
+<div class="taskcontainer">
+
+<a class="btn btn-primary" href="/schedule/">Back to Schedule</a>
+<br /><br />
+{% if user.is_superuser %}
+<form action="/tasks/edit/{{ task.id }}/" method="post">{% csrf_token %}
+
+{{ form|crispy }}
+
+<br />
+<input type="submit" name="Submit", value="Submit">
+<button><a href="/tasks/delete/{{ task.id }}/" style="color:black">Delete Task</a></button>
+
+</form>
+{% else %}
+
+<table class="table">
+    <tr>
+        <td><strong>Name: </strong> </td>
+        <td>{{ task.name }}</td>
+    </tr>
+    <tr>
+        <td><strong>Volunteers: </strong> </td>
+        <td>{% for volunteer in task.volunteers.all %} {{ volunteer }} <br />{% endfor %} </td>
+    </tr>
+    <tr>
+        <td><strong>Day: </strong> </td>
+        <td>{{ task.day }}</td>
+    </tr>
+    <tr>
+        <td><strong>Time: </strong> </td>
+        <td>{{ task.time }}</td>
+    </tr>
+    <tr>
+        <td><strong>Hours: </strong> </td>
+        <td>{{ task.hours }}</td>
+    </tr>
+
+</table>
+
+{% endif %}
+
+</div>
+{% endblock %}

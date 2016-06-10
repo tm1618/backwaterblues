@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="schedulecontainer">
+<h1 class="text-center">Friday</h1>
+<table class="scheduletable">
+    <body>
+        {% for i in fridaysetup %}
+        <tr>
+            <td><strong><a href="/tasks/edit/{{ i.id }}">{{ i.name }}</a></strong></td>
+            <td>{{ i.time }}</td>
+            <td>{% for volunteer in i.volunteers.all %} {{ volunteer }}<br /> {% endfor %}</td>
+        </tr>
+        {% endfor %}
+        {% for i in fridaydance %}
+        <tr>
+            <td><strong><a href="/tasks/edit/{{ i.id }}">{{ i.name }}</a></strong></td>
+            <td>{{ i.time }}</td>
+            <td>{% for volunteer in i.volunteers.all %} {{ volunteer }}<br /> {% endfor %}</td>
+        </tr>
+        {% endfor %}
+        {% for i in fridaybreakdown %}
+        <tr>
+            <td><strong><a href="/tasks/edit/{{ i.id }}">{{ i.name }}</a></strong></td>
+            <td>{{ i.time }}</td>
+            <td>{% for volunteer in i.volunteers.all %} {{ volunteer }}<br /> {% endfor %}</td>
+        </tr>
+        {% endfor %}
+    </body>
+</table>
+
+
+<h1 class="text-center">Saturday</h1>
+<table class="scheduletable">
+    <body>
+        {% for i in saturdaymorningsetup %}
+        <tr>
+            <td><strong><a href="/tasks/edit/{{ i.id }}">{{ i.name }}</a></strong></td>
+            <td>{{ i.time }}</td>
+            <td>{% for volunteer in i.volunteers.all %} {{ volunteer }}<br /> {% endfor %}</td>
+        </tr>
+        {% endfor %}
+        {% for i in saturdaymorning %}
+        <tr>
+            <td><strong><a href="/tasks/edit/{{ i.id }}">{{ i.name }}</a></strong></td>
+            <td>{{ i.time }}</td>
+            <td>{% for volunteer in i.volunteers.all %} {{ volunteer }}<br /> {% endfor %}</td>
+        </tr>
+        {% endfor %}
+        {% for i in saturdayafternoon %}
+        <tr>
+            <td><strong><a href="/tasks/edit/{{ i.id }}">{{ i.name }}</a></strong></td>
+            <td>{{ i.time }}</td>
+            <td>{% for volunteer in i.volunteers.all %} {{ volunteer }}<br /> {% endfor %}</td>
+        </tr>
+        {% endfor %}
+        {% for i in saturdaydancesetup%}
+        <tr>
+            <td><strong><a href="/tasks/edit/{{ i.id }}">{{ i.name }}</a></strong></td>
+            <td>{{ i.time }}</td>
+            <td>{% for volunteer in i.volunteers.all %} {{ volunteer }}<br /> {% endfor %}</td>
+        </tr>
+        {% endfor %}
+        {% for i in saturdaydance%}
+        <tr>
+            <td><strong><a href="/tasks/edit/{{ i.id }}">{{ i.name }}</a></strong></td>
+            <td>{{ i.time }}</td>
+            <td>{% for volunteer in i.volunteers.all %} {{ volunteer }}<br /> {% endfor %}</td>
+        </tr>
+        {% endfor %}
+        {% for i in saturdaybreakdown %}
+        <tr>
+            <td><strong><a href="/tasks/edit/{{ i.id }}">{{ i.name }}</a></strong></td>
+            <td>{{ i.time }}</td>
+            <td>{% for volunteer in i.volunteers.all %} {{ volunteer }}<br /> {% endfor %}</td>
+        </tr>
+        {% endfor %}
+    </body>
+</table>
+
+<h1 class="text-center">Sunday</h1>
+<table class="scheduletable">
+    <body>
+        {% for i in sundaymorningsetup %}
+        <tr>
+            <td><strong><a href="/tasks/edit/{{ i.id }}">{{ i.name }}</a></strong></td>
+            <td>{{ i.time }}</td>
+            <td>{% for volunteer in i.volunteers.all %} {{ volunteer }}<br /> {% endfor %}</td>
+        </tr>
+        {% endfor %}
+        {% for i in sundaymorning %}
+        <tr>
+            <td><strong><a href="/tasks/edit/{{ i.id }}">{{ i.name }}</a></strong></td>
+            <td>{{ i.time }}</td>
+            <td>{% for volunteer in i.volunteers.all %} {{ volunteer }}<br /> {% endfor %}</td>
+        </tr>
+        {% endfor %}
+        {% for i in sundayafternoon %}
+        <tr>
+            <td><strong><a href="/tasks/edit/{{ i.id }}">{{ i.name }}</a></strong></td>
+            <td>{{ i.time }}</td>
+            <td>{% for volunteer in i.volunteers.all %} {{ volunteer }}<br /> {% endfor %}</td>
+        </tr>
+        {% endfor %}
+        {% for i in sundaynight%}
+        <tr>
+            <td><strong><a href="/tasks/edit/{{ i.id }}">{{ i.name }}</a></strong></td>
+            <td>{{ i.time }}</td>
+            <td>{% for volunteer in i.volunteers.all %} {{ volunteer }}<br /> {% endfor %}</td>
+        </tr>
+        {% endfor %}
+        {% for i in sundaybreakdown %}
+        <tr>
+            <td><strong><a href="/tasks/edit/{{ i.id }}">{{ i.name }}</a></strong></td>
+            <td>{{ i.time }}</td>
+            <td>{% for volunteer in i.volunteers.all %} {{ volunteer }}<br /> {% endfor %}</td>
+        </tr>
+        {% endfor %}
+    </body>
+</table>
+
+</div>
+
+{% endblock %}
